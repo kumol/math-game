@@ -15,10 +15,10 @@ import Input from "../components/Input";
 const GameStartView = (props)=>{
     const [enterdValue, setEnterdValue] = useState("");
     const changeHandler = (inputText) => {
-        // console.log(inputText);
-        // let value = inputText.replace(/[^0-9]/g, "0");
-        // console.log(value);
         setEnterdValue(inputText.replace(/[^0-9]/g, ""));
+    }
+    const reset = () => {
+        setEnterdValue("");
     }
     return(
         <TouchableWithoutFeedback  onPress={()=> Keyboard.dismiss()}>
@@ -37,7 +37,7 @@ const GameStartView = (props)=>{
                         />
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
-                            <Button title="Reset" onPress={()=>{}} color={Colors.accent} />
+                            <Button title="Reset" onPress={()=>{reset();}} color={Colors.accent} />
                         </View>
                         <View style={styles.button}>
                             <Button title="Confirm" onPress={()=>{}} color={Colors.primary} />
